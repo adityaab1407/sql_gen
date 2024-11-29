@@ -1,0 +1,19 @@
+-----------------------------------
+|         Results Screen          |
+-----------------------------------
+|  Analyzed Workspace Summary:    |
+|  - Tables Identified:           |
+|    [List of tables]             |
+|  - Columns:                     |
+|    [List of columns]            |
+|                                 |
+|  Generated SQL Formula:         |
+|  [SQL formula display here]     |
+|  [Copy to Clipboard]            |
+|                                 |
+|  Explanation:                   |
+|  - [Explanation of SQL formula] |
+|                                 |
+|  Execute Action on Database?    |
+|  [Yes, Execute] [No, Go Back]   |
+-----------------------------------
