@@ -4,6 +4,8 @@ import numpy as np
 import chromadb
 from transformers import pipeline
 
+# change code
+
 client = chromadb.Client()
 csv_path = "/Users/adityaab14/Documents/Projects/power-bi-dax-generator/KB-dax-formulas.csv"
 model = SentenceTransformer('all-MiniLM-L6-v2')
