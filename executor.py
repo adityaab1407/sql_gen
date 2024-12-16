@@ -1,17 +1,28 @@
-import sqlite3
 import pandas as pd
+import pandasql as ps
 
-conn1 = sqlite3.connect('/Users/adityaab14/Documents/Projects/sql_gen/workbench/db1.sqlite')
+def execute_query_from_file(input_csv1, input_csv2, output_csv, query_file_path):
+    # Load the CSV files into pandas DataFrames
+    df1 = pd.read_csv(input_csv1)
+    df2 = pd.read_csv(input_csv2)
 
-conn1.execute("ATTACH DATABASE '/Users/adityaab14/Documents/Projects/sql_gen/workbench/db2.sqlite' AS db2")
+    # Read the SQL query from the file
+    with open(query_file_path, 'r') as file:
+        query = file.read()
 
-with open('/Users/adityaab14/Documents/Projects/sql_gen/workbench/query.sql', 'r') as file:
-    query = file.read()
+    # Combine the DataFrames by adding them as tables in pandasql
+    # Create a query and pass the dataframes to pandasql using the locals()
+    query_result = ps.sqldf(query, locals())
 
-result = pd.read_sql_query(query, conn1)
+    # Save the result of the query to a new CSV file
+    query_result.to_csv(output_csv, index=False)
 
-result.to_csv('/Users/adityaab14/Documents/Projects/sql_gen/workbench/sources_combined.csv', index=False)
+    print(f"Query executed successfully. Output saved to '{output_csv}'.")
 
-print("Query executed successfully. Output saved to 'output_combined.csv'.")
+# Example usage:
+input_csv1 = '/Users/adityaab14/Documents/Projects/sql_gen/workbench/source1.csv'
+input_csv2 = '/Users/adityaab14/Documents/Projects/sql_gen/workbench/source2.csv'
+output_csv = '/Users/adityaab14/Documents/Projects/sql_gen/workbench/sources_combined.csv'
+query_file_path = '/Users/adityaab14/Documents/Projects/sql_gen/workbench/query.sql'
 
-conn1.close()
+execute_query_from_file(input_csv1, input_csv2, output_csv, query_file_path)
