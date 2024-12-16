@@ -1,5 +1,5 @@
-id,name,age,city,salary_source1,department,position,salary_source2
-1,Alice,25,New York,55000,IT,Developer,55000.0
-2,Bob,30,Los Angeles,60000,HR,Manager,60000.0
-3,Charlie,35,Chicago,70000,IT,Architect,70000.0
-4,Diana,28,Miami,58000,,,
+id,name,age,department,position
+1,Alice,25,IT,Developer
+2,Bob,30,HR,Manager
+3,Charlie,35,IT,Architect
+4,Diana,28,,

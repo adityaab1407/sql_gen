@@ -4,10 +4,7 @@ import pandas as pd
 def generate_sql(query):
     # LLM Simulation: For now, just echoing the input query
     generated_sql = f"SELECT * FROM table WHERE description LIKE '%{query}%'"
-    
-    with open('/Users/adityaab14/Documents/Projects/sql_gen/workbench/query.sql', 'w') as file:
-        file.write(query)
-    
+       
     return generated_sql, query
 
 def run_source_detector():

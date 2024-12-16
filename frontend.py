@@ -4,11 +4,15 @@ import pandas as pd
 from backend import *
 
 
+
 def main():
+  
+
     with gr.Blocks() as frontend:
         gr.Markdown("# SQL Generator Tool")
         gr.Markdown("### Describe your task, and the tool will analyze your workspace, generate SQL, and execute it.")
         
+
         operation = gr.Textbox(label="Describe your task")
         
         with gr.Row():
