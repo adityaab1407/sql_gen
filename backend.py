@@ -22,8 +22,8 @@ def run_source_detector():
         capture_output=True, text=True
     )
 
-    input1_df = pd.read_csv('workbench/source1.csv')
-    input2_df = pd.read_csv('workbench/source2.csv')
+    input1_df = pd.read_csv('workbench/input1.csv')
+    input2_df = pd.read_csv('workbench/input2.csv')
     return input1_df, input2_df
 
 def run_executor():
@@ -32,10 +32,12 @@ def run_executor():
         capture_output=True, text=True
     )
 
-    output_df = pd.read_csv('workbench/sources_combined.csv')
+    output_df = pd.read_csv('workbench/output.csv')
     return output_df
 
 def generate_model_call(query, input1, input2):
+
+    #Replace with API key
     client = InferenceClient(api_key=HF_API_KEY)
 
     system_message = f"""

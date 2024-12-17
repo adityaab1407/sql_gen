@@ -7,7 +7,7 @@ def detect_csv_files_and_report_structure(folder_path):
     csv_files = [file for file in files_in_folder if file.lower().endswith('.csv')]
 
     if len(csv_files) != 3:
-        print("Expected three CSV files: source1.csv, source2.csv, and sources_combined.csv. Please check the folder.")
+        print("Expected three CSV files: input1.csv, input2.csv, and output.csv. Please check the folder.")
         return
 
     input1 = None
@@ -22,11 +22,11 @@ def detect_csv_files_and_report_structure(folder_path):
             df = pd.read_csv(file_path)
 
             # Store DataFrames in respective variables based on the file name
-            if 'source1' in csv_file.lower():
+            if 'input1' in csv_file.lower():
                 input1 = df
-            elif 'source2' in csv_file.lower():
+            elif 'input2' in csv_file.lower():
                 input2 = df
-            elif 'sources_combined' in csv_file.lower():
+            elif 'output' in csv_file.lower():
                 output = df
 
             # Report the structure of each file

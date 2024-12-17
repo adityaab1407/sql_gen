@@ -14,9 +14,9 @@ def execute_query_from_file(input_csv1, input_csv2, output_csv, query_file_path)
 
     print(f"Query executed successfully. Output saved to '{output_csv}'.")
 
-input_csv1 = 'workbench/source1.csv'
-input_csv2 = 'workbench/source2.csv'
-output_csv = 'workbench/sources_combined.csv'
+input_csv1 = 'workbench/input1.csv'
+input_csv2 = 'workbench/input2.csv'
+output_csv = 'workbench/output.csv'
 query_file_path = 'workbench/query.sql'
 
 execute_query_from_file(input_csv1, input_csv2, output_csv, query_file_path)
